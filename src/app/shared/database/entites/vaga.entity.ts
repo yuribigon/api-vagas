@@ -1,4 +1,5 @@
-import { Column, Entity, PrimaryColumn } from "typeorm";
+import { Column, Entity, JoinColumn, OneToMany, PrimaryColumn } from "typeorm";
+import { ApplyEntity } from "./apply.entity";
 
 @Entity({ name: 'vagas' })
 export class VagaEntity {
@@ -22,4 +23,8 @@ export class VagaEntity {
 
   @Column({ name: 'vaga_max_candidatos' })
   maxCandidatos?: number
+
+  @OneToMany(() => ApplyEntity, (apply) => apply.vaga)
+  // @JoinColumn({ name: 'apply', referencedColumnName: 'apply_vaga_uuid'})
+  applys?: ApplyEntity[]
 }

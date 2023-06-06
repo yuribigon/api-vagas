@@ -1,3 +1,5 @@
+import { Apply } from "./apply";
+
 export class User {
   constructor(
     private uuid?: string,
@@ -6,10 +8,15 @@ export class User {
     private senha?: string,
     private nomeEmpresa?: string,
     private tipo?: 'candidato' | 'admin' | 'recrutador',
+    private applys?: Apply[],
   ) { }
 
   isAdmin(): Boolean {
     return this.tipo === 'admin';
+  }
+
+  isCandidato(): Boolean {
+    return this.tipo === 'candidato';
   }
 
   isRecrutador(): Boolean {

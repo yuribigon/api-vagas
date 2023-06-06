@@ -4,6 +4,7 @@ import { DatabaseConnection } from "../../../main/database";
 import { User } from "../../models/user";
 import { UserEntity } from "../../shared/database/entites/user.entity";
 import { UserTipo, UserToCreateDTO } from "./usecases/createUserUsecase";
+import { Apply } from "../../models/apply";
 
 export class UserRepository {
   private userRepository: Repository<UserEntity>;
@@ -24,6 +25,29 @@ export class UserRepository {
   async listUsers(filter: Partial<UserEntity>) : Promise<User[]> {
     const usersFound = await this.userRepository.findBy(filter);
     return usersFound.map((userEntity) => UserRepository.entityToModel(userEntity));
+    
+    // const usersFound = await this.userRepository.find({
+    //   relations: ['apply']
+    // });
+
+    // return usersFound.map((userEntity) => new User(
+    //   userEntity.uuid,
+    //   userEntity.name,
+    //   userEntity.email,
+    //   userEntity.senha,
+    //   userEntity.nomeEmpresa,
+    //   userEntity.tipo as UserTipo,
+    //   userEntity.applys?.length
+    //   ? userEntity.applys.map((apply)=> new Apply(
+    //     apply.uuid,
+    //     apply.vagaUuid,
+    //     apply.candidatoUuid,
+    //     apply.dataApply,
+    //     apply.success
+    //   ))
+    //   : undefined,
+    // ));
+    
   }
 
   async find(uuid: string) : Promise<User | null> {
@@ -39,6 +63,15 @@ export class UserRepository {
       userEntity.senha,
       userEntity.nomeEmpresa,
       userEntity.tipo as UserTipo,
+      userEntity.applys?.length
+      ? userEntity.applys.map((apply)=> new Apply(
+        apply.uuid,
+        apply.vagaUuid,
+        apply.candidatoUuid,
+        apply.dataApply,
+        apply.success
+      ))
+      : undefined,
     );
   }
 }

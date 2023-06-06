@@ -21,8 +21,7 @@ Um usuário do tipo “recrutador” poderá listar todos os candidatos aplicado
 
 >>> Requisito 9 - Listagem de vagas e seus candidatos
 Um usuário do tipo “recrutador” poderá listar todas as vagas que ele criou junto à informação dos candidatos associados a cada vaga.
-- O recrutador só poderá listar informações das
-vagas que ele criou.
+- O recrutador só poderá listar informações das vagas que ele criou.
 
 >>> Requisito 10 - Desativação/Ativação de uma vaga
 Um usuário do tipo “recrutador” poderá desativar uma vaga ativa ou ativar uma vaga desativada.

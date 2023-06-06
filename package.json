@@ -8,7 +8,8 @@
     "build": "npx tsc",
     "start": "node build/main/index.js",
     "dev": "concurrently \"npx tsc --watch\" \"nodemon -q build/main/index.js\"",
-    "r-migration": "npx typeorm migration:run -d build/main/config/typeorm.config.js"
+    "r-migration": "npx typeorm migration:run -d build/main/config/typeorm.config.js",
+    "c-migration": "npx typeorm migration:create src/app/shared/database/migrations/NewMigration"
   },
   "author": "yuribigon",
   "license": "ISC",

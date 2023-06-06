@@ -1,4 +1,5 @@
-import { Column, Entity, PrimaryColumn } from "typeorm";
+import { Column, Entity, JoinColumn, OneToMany, PrimaryColumn } from "typeorm";
+import { ApplyEntity } from "./apply.entity";
 
 @Entity({ name: 'users' })
 export class UserEntity {
@@ -19,4 +20,12 @@ export class UserEntity {
 
   @Column({ name: 'user_tipo' })  
   tipo?: string
+
+  @OneToMany(() => ApplyEntity, (apply) => apply.candidato)
+  // @JoinColumn({ name: 'apply', referencedColumnName: 'apply_candidato_uuid'})
+  applys?: ApplyEntity[]
+
+  // constructor(entity: Partial<ApplyEntity>) {
+  //   Object.assign(this, entity)
+  // }
 }
