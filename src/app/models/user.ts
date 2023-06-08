@@ -27,14 +27,26 @@ export class User {
     return this.uuid as string;
   }
 
-  toJson(): User {
-    return new User(
-      this.uuid,
-      this.name,
-      this.email,
-      undefined,
-      this.nomeEmpresa,
-      this.tipo,
-    );
+  // toJson(): User {
+  //   return new User(
+  //     this.uuid,
+  //     this.name,
+  //     this.email,
+  //     undefined,
+  //     this.nomeEmpresa,
+  //     this.tipo,
+  //     this.applys,
+  //   );
+  // }
+
+  toJson(): any {
+    return {
+      uuid: this.uuid,
+      name: this.name,
+      email: this.email,
+      nomeEmpresa: this.nomeEmpresa,
+      tipo: this.tipo,
+      applys: this.applys,
+    };
   }
 }

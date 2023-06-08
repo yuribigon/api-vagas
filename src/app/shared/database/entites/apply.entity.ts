@@ -1,4 +1,4 @@
-import { BeforeInsert, BeforeUpdate, Column, Entity, JoinColumn, ManyToOne, PrimaryColumn } from "typeorm";
+import { BeforeInsert, Column, Entity, JoinColumn, ManyToOne, PrimaryColumn } from "typeorm";
 import { VagaEntity } from "./vaga.entity";
 import { UserEntity } from "./user.entity";
 
@@ -14,7 +14,7 @@ export class ApplyEntity {
   candidatoUuid!: string
 
   @Column({ name: 'apply_data' })
-  dataApply!: string
+  dataApply: string = "";
 
   @Column({ name: 'apply_success' })  
   success?: boolean

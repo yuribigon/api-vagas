@@ -1,10 +1,11 @@
-## PENDENTE
 
 >>> Requisito 6 - Aplicação de uma vaga pelo candidato
 Um candidato pode se aplicar a várias vagas. Uma vaga por ter sido escolhida por diversos candidatos.
 Para cada candidatura, armazenar:
 - Data da aplicação
 - Indicador de sucesso (se o candidato foi selecionado ou não).
+
+## PENDENTE
 Um candidato NÃO pode aplicar a uma vaga se:
 - A data limite da vaga já foi alcançada
 - A vaga não está ativa

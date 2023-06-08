@@ -21,6 +21,7 @@ export class ApplyRepository {
     const applyConfirmed = await this.applyRepository.save({
       uuid: uuidv4(),
       ...infosToApply,
+      dataApply: new Date().toISOString()
     });
     return ApplyRepository.entityToModel(applyConfirmed);
   }

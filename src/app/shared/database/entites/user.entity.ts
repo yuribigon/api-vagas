@@ -22,8 +22,8 @@ export class UserEntity {
   tipo?: string
 
   @OneToMany(() => ApplyEntity, (apply) => apply.candidato)
-  // @JoinColumn({ name: 'apply', referencedColumnName: 'apply_candidato_uuid'})
-  applys?: ApplyEntity[]
+  //@JoinColumn({ name: 'user_uuid', referencedColumnName: 'apply_candidato_uuid'})
+  applys?: ApplyEntity[];
 
   // constructor(entity: Partial<ApplyEntity>) {
   //   Object.assign(this, entity)

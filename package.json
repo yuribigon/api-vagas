@@ -9,12 +9,14 @@
     "start": "node build/main/index.js",
     "dev": "concurrently \"npx tsc --watch\" \"nodemon -q build/main/index.js\"",
     "r-migration": "npx typeorm migration:run -d build/main/config/typeorm.config.js",
+    "rev-migration": "npx typeorm migration:revert -d build/main/config/typeorm.config.js",
     "c-migration": "npx typeorm migration:create src/app/shared/database/migrations/NewMigration"
   },
   "author": "yuribigon",
   "license": "ISC",
   "dependencies": {
     "express": "^4.18.2",
+    "ioredis": "^5.3.2",
     "jsonwebtoken": "^9.0.0",
     "pg": "^8.11.0",
     "typeorm": "^0.3.16",

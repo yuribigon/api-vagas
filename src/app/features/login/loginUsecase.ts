@@ -11,6 +11,8 @@ export class LoginUsecase {
 
   async execute(loginData: LoginDataDTO): Promise<User | null> {
     const usersFound = await this.repository.listUsers(loginData);
+    console.log(usersFound);
+    
     return usersFound.length > 0
       ? usersFound[0].toJson()
       : null;

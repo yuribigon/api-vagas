@@ -10,8 +10,8 @@ export class CreateApplyTable1685993657143 implements MigrationInterface {
               new TableColumn({ name: 'apply_uuid', type: 'varchar', isPrimary: true }),
               new TableColumn({ name: 'apply_vaga_uuid', type: 'varchar' }),
               new TableColumn({ name: 'apply_candidato_uuid', type: 'varchar' }),
-              new TableColumn({ name: 'apply_data', type: 'timestamp' }),
-              new TableColumn({ name: 'apply_success', type: 'boolean' }),
+              new TableColumn({ name: 'apply_data', type: 'varchar' }),
+              new TableColumn({ name: 'apply_success', type: 'boolean', isNullable: true }),
             ],
             foreignKeys: [
               {
